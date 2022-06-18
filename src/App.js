@@ -1,9 +1,16 @@
-import { DatePicker } from "antd";
+import {
+  DatePicker as DatePickerJalali,
+  Calendar,
+  JalaliLocaleListener,
+} from "antd-jalali";
 
 function App() {
   return (
     <div className="App">
-      <DatePicker />
+      <JalaliLocaleListener />
+      تاریخ: <DatePickerJalali />
+      {/* رنج تاریخ: <DatePickerJalali.RangePicker />
+      <Calendar /> */}
     </div>
   );
 }
