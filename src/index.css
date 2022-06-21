@@ -22,6 +22,20 @@ code {
   height: 100vh;
 }
 
+.layout .slider .satisfaction {
+  position: absolute;
+  bottom: 0%;
+  color: #fff;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  display: none;
+}
+
+.layout .slider .satisfaction.show {
+  display: flex;
+}
+
 .trigger {
   padding: 0 24px;
   font-size: 18px;

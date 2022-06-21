@@ -1,11 +1,11 @@
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
-  UploadOutlined,
+  LogoutOutlined,
   UserOutlined,
-  VideoCameraOutlined,
+  WalletOutlined,
 } from "@ant-design/icons";
-import { Layout, Menu } from "antd";
+import { Layout, Menu, Rate } from "antd";
 import React, { useState } from "react";
 import {
   DatePicker as DatePickerJalali,
@@ -20,32 +20,43 @@ function App() {
 
   return (
     <Layout className="layout">
-      <Sider trigger={null} collapsible collapsed={collapsed}>
-        <div className="logo">
-          <h4>LOGO</h4>
+      <Sider
+        className="slider"
+        trigger={null}
+        collapsible
+        collapsed={collapsed}
+      >
+        <div>
+          <div className="logo">
+            <h4>LOGO</h4>
+          </div>
+          <Menu
+            theme="dark"
+            mode="inline"
+            defaultSelectedKeys={["1"]}
+            items={[
+              {
+                key: "1",
+                icon: <UserOutlined />,
+                label: "User Info",
+              },
+              {
+                key: "2",
+                icon: <WalletOutlined />,
+                label: "Wallet",
+              },
+              {
+                key: "3",
+                icon: <LogoutOutlined />,
+                label: "Logout",
+              },
+            ]}
+          />
         </div>
-        <Menu
-          theme="dark"
-          mode="inline"
-          defaultSelectedKeys={["1"]}
-          items={[
-            {
-              key: "1",
-              icon: <UserOutlined />,
-              label: "nav 1",
-            },
-            {
-              key: "2",
-              icon: <VideoCameraOutlined />,
-              label: "nav 2",
-            },
-            {
-              key: "3",
-              icon: <UploadOutlined />,
-              label: "nav 3",
-            },
-          ]}
-        />
+        <div className={`satisfaction ${collapsed !== true && "show"}`}>
+          <span>Your satisfaction level</span>
+          <Rate allowHalf defaultValue={2.5} />
+        </div>
       </Sider>
       <Layout className="site-layout">
         <Header className="site-layout-background" style={{ padding: 0 }}>
