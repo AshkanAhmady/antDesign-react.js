@@ -5,7 +5,7 @@ import {
   UserOutlined,
   WalletOutlined,
 } from "@ant-design/icons";
-import { Layout, Menu, Rate } from "antd";
+import { Layout, Menu, Rate, Avatar, Carousel, Button } from "antd";
 import React, { useState } from "react";
 import {
   DatePicker as DatePickerJalali,
@@ -45,13 +45,31 @@ function App() {
                 icon: <WalletOutlined />,
                 label: "Wallet",
               },
-              {
-                key: "3",
-                icon: <LogoutOutlined />,
-                label: "Logout",
-              },
             ]}
           />
+          <Carousel
+            className={`sidebarSlider ${collapsed !== true && "show"}`}
+            autoplay
+          >
+            <div>
+              <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60" />
+            </div>
+            <div>
+              <img src="https://images.unsplash.com/photo-1655841603567-72ca4d864457?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60" />
+            </div>
+            <div>
+              <img src="https://images.unsplash.com/photo-1655841603567-72ca4d864457?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60" />
+            </div>
+            <div>
+              <img src="https://images.unsplash.com/photo-1655810120657-9ce44d2f9e6c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxOHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60" />
+            </div>
+          </Carousel>
+          <div className="logout">
+            <LogoutOutlined />
+            <span className={`text ${collapsed !== true && "show"}`}>
+              Logout
+            </span>
+          </div>
         </div>
         <div className={`satisfaction ${collapsed !== true && "show"}`}>
           <span>Your satisfaction level</span>
@@ -59,7 +77,10 @@ function App() {
         </div>
       </Sider>
       <Layout className="site-layout">
-        <Header className="site-layout-background" style={{ padding: 0 }}>
+        <Header
+          className="site-layout-background header"
+          style={{ padding: 0 }}
+        >
           {React.createElement(
             collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,
             {
@@ -67,6 +88,10 @@ function App() {
               onClick: () => setCollapsed(!collapsed),
             }
           )}
+          <div className="profile">
+            <span className="profileName">Ashkan</span>
+            <Avatar size={34} icon={<UserOutlined />} />
+          </div>
         </Header>
         <Content
           className="site-layout-background"

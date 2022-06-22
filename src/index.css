@@ -30,10 +30,48 @@ code {
   align-items: center;
   width: 100%;
   display: none;
+  margin-bottom: 10px;
 }
 
 .layout .slider .satisfaction.show {
   display: flex;
+}
+
+.sidebarSlider {
+  display: none !important;
+}
+
+.sidebarSlider.show {
+  display: block !important;
+}
+
+.sidebarSlider div {
+  height: 150px;
+  line-height: 150px;
+}
+
+.sidebarSlider div img {
+  width: 100%;
+}
+
+.logout {
+  margin-left: 33px;
+  margin-top: 10px;
+  cursor: pointer;
+  color: #a6ab9a;
+}
+
+.logout:hover {
+  color: #da402f;
+}
+
+.logout span.text {
+  margin-left: 10px;
+  display: none;
+}
+
+.logout span.text.show {
+  display: inline-block;
 }
 
 .trigger {
@@ -63,4 +101,24 @@ code {
 
 .site-layout .site-layout-background {
   background: #fff;
+}
+
+.site-layout-background.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 15px !important;
+}
+
+.site-layout-background.header .profile {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.site-layout-background.header .profile span.profileName {
+  font-size: 17px;
+  font-weight: 600;
+  color: #171717;
+  margin-right: 10px;
 }
