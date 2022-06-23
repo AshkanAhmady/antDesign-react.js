@@ -5,7 +5,7 @@ import {
   UserOutlined,
   WalletOutlined,
 } from "@ant-design/icons";
-import { Layout, Menu, Rate, Avatar, Carousel, Button } from "antd";
+import { Layout, Menu, Rate, Avatar, Carousel, Timeline } from "antd";
 import React, { useState } from "react";
 import {
   DatePicker as DatePickerJalali,
@@ -94,14 +94,35 @@ function App() {
           </div>
         </Header>
         <Content
-          className="site-layout-background"
+          className="site-layout-background content"
           style={{
             margin: "24px 16px",
             padding: 24,
             minHeight: 280,
           }}
         >
-          Content
+          <div></div>
+          <div>
+            <Timeline mode="right">
+              <Timeline.Item label="2015-09-01">
+                Create a services
+              </Timeline.Item>
+              <Timeline.Item label="2018-02-03">
+                Solve initial network problems
+              </Timeline.Item>
+              <Timeline.Item>Technical testing</Timeline.Item>
+              <Timeline.Item>Technical testing</Timeline.Item>
+              <Timeline.Item label="2019-01-01 07:10:00">
+                Network problems being solved
+              </Timeline.Item>
+              <Timeline.Item label="2019-12-01 09:00:00">
+                responsive Problem being solved
+              </Timeline.Item>
+              <Timeline.Item label="2020-09-01 01:12:21">
+                Network problems being solved
+              </Timeline.Item>
+            </Timeline>
+          </div>
         </Content>
       </Layout>
     </Layout>
