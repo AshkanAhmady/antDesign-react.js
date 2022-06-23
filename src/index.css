@@ -125,10 +125,18 @@ code {
 
 .site-layout-background.content {
   display: grid;
-  grid-template-columns: 70% 30%;
-  /* grid-gap: 20px; */
+  grid-template-columns: 65% 30%;
+  justify-content: space-between;
 }
 
-.site-layout-background.content > div:first-child {
-  background-color: red;
+.site-layout-background.content h1 {
+  border-bottom: 2px solid #cecece;
+  padding-bottom: 5px;
+  margin-bottom: 30px;
+}
+
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }

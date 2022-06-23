@@ -5,8 +5,18 @@ import {
   UserOutlined,
   WalletOutlined,
 } from "@ant-design/icons";
-import { Layout, Menu, Rate, Avatar, Carousel, Timeline } from "antd";
+import {
+  Layout,
+  Menu,
+  Rate,
+  Avatar,
+  Carousel,
+  Timeline,
+  Collapse,
+  Progress,
+} from "antd";
 import React, { useState } from "react";
+import { red, green } from "@ant-design/colors";
 import {
   DatePicker as DatePickerJalali,
   Calendar,
@@ -15,8 +25,14 @@ import {
 
 const { Header, Sider, Content } = Layout;
 
+const { Panel } = Collapse;
+
 function App() {
   const [collapsed, setCollapsed] = useState(false);
+
+  const onChange = (key: string | string[]) => {
+    console.log(key);
+  };
 
   return (
     <Layout className="layout">
@@ -101,8 +117,52 @@ function App() {
             minHeight: 280,
           }}
         >
-          <div></div>
-          <div>
+          <div className="mainContent">
+            <div>
+              <h1>Projects</h1>
+              <Collapse defaultActiveKey={["1"]} onChange={onChange}>
+                <Panel header="todo list" key="1">
+                  <p>
+                    This application is a todo list whose todos can be deleted
+                    and updated, and a filter is displayed to show the completed
+                    todos.
+                  </p>
+                </Panel>
+                <Panel header="quiz" key="2">
+                  <p>
+                    A simple quiz project created with the help of react and
+                    tailwind frameworks and you can test your ability to answer
+                    basic html questions. The project also uses the
+                    reactRouterDom library.
+                  </p>
+                </Panel>
+                <Panel header="Digitize Shopping" key="3">
+                  <p>
+                    An online store of products such as (laptops, mobile phones
+                    and digital watches) developed with tailwind and has pages
+                    such as product list, single product page and shopping cart
+                    that have been implemented and responded with tailwind
+                  </p>
+                </Panel>
+              </Collapse>
+            </div>
+            <div>
+              <h1>Skills</h1>
+              <strong>HTML</strong>
+              <Progress percent={100} steps={50} strokeColor={green[6]} />
+              <br />
+              <strong>CSS</strong>
+              <Progress percent={100} steps={50} strokeColor={green[6]} />
+              <br />
+              <strong>JAVASCRIPT</strong>
+              <Progress percent={80} steps={50} />
+              <br />
+              <strong>REACT.JS</strong>
+              <Progress percent={60} steps={50} />
+            </div>
+          </div>
+          <div className="sideContent">
+            <h1>Activities</h1>
             <Timeline mode="right">
               <Timeline.Item label="2015-09-01">
                 Create a services
